@@ -14,39 +14,29 @@ import java.util.ArrayList;
  */
 public class Module {
     
-    private static int nextModuleId = 401;
-    private String moduleCode, title;
+    private String moduleName;
     private ArrayList students;
 
-    public Module(String title) {
-        this.title = title;
-        this.moduleCode = "CT " + nextModuleId;
+    public Module(String moduleName) {
+        this.moduleName = moduleName;
         this.students = new ArrayList();
-        nextModuleId++;
-    }
-
-    private String getModuleCode() {
-        return this.moduleCode;
-    }
-
-    private String getTitle() {
-        return this.title;
     }
 
     public void addStudent(Student s) {
         students.add(s);
+    }
+    
+    public ArrayList<Student> getStudents() {
+        return this.students;
     }
 
     public void setStudents(ArrayList<Student> s) {
         this.students = s;
     }
 
-    public ArrayList<Student> getStudents() {
-        return this.students;
-    }
-
+    @Override
     public String toString() {
-        return "Module Code: " + this.moduleCode + " Title: " + this.title;
+        return "Module Name: " + this.moduleName;
     }
     
 }

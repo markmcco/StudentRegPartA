@@ -16,31 +16,24 @@ import org.joda.time.DateTime;
 public class Student {
     
     private String name;
-    private ArrayList<Module> modules;
-    private Course course;
-    private String studentId;
-    private int age;
     private DateTime DOB;
+    private String studentId;
+    private Course course;
+    private ArrayList<Module> modules;
 
     public Student(String name, String studentId){
         this.name = name;
         this.studentId = studentId;
-        DateTime now = DateTime.now();
-       // age = Years.yearsBetween(DOB, now).getYears();
 
         modules = new ArrayList<Module>();
     }
-
-    public String toString() {
-        return "Name: " + this.name + " ID: " + this.studentId + " Username: " + this.getUserName();
+    
+    public void setName(String n) {
+        this.name = n;
     }
 
     public String getStudentId() {
         return studentId;
-    }
-
-    public void setName(String n) {
-        this.name = n;
     }
 
     public String getUserName() {
@@ -69,6 +62,11 @@ public class Student {
 
     public void setDOB(DateTime DOB) {
         this.DOB = DOB;
+    }
+    
+    @Override
+    public String toString() {
+        return "Name: " + this.name + " ID: " + this.studentId + " Username: " + this.getUserName();
     }
     
 }

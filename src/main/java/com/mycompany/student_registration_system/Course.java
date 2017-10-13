@@ -17,22 +17,22 @@ import org.joda.time.DateTime;
  */
 public class Course {
     
-    private ArrayList modules;
-    private String title, courseCode;
+    private String courseName, courseCode;
     private DateTime startDate, endDate;
     private ArrayList<Student> students;
+    private ArrayList modules;
 
-    public Course(String title, String courseCode, DateTime start, DateTime end) {
-        this.title = title;
+    public Course(String courseName, String courseCode, DateTime start, DateTime end) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
         this.startDate = start;
         this.endDate = end;
-        this.courseCode = courseCode;
         modules = new ArrayList();
         students = new ArrayList<Student>();
     }
 
-    public void addModule(Module m){
-        modules.add(m);
+    public void addModule(Module module){
+        modules.add(module);
     }
 
     public void registerStudent(Student s) {
@@ -44,9 +44,13 @@ public class Course {
             m.addStudent(s);
         }
     }
+    
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
-    public String toString() {
-        return "Coursecode: " + courseCode + " Title: " + title;
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
     }
 
     public ArrayList getModules() {
@@ -56,23 +60,7 @@ public class Course {
     public void setModules(ArrayList modules) {
         this.modules = modules;
     }
-
-    public String getCourseCode() {
-        return courseCode;
-    }
-
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
+    
     public DateTime getStartDate() {
         return startDate;
     }
@@ -88,13 +76,10 @@ public class Course {
     public void setEndDate(DateTime endDate) {
         this.endDate = endDate;
     }
-
-    public ArrayList<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
+    
+    @Override
+    public String toString() {
+        return "Course Name: " + courseName;
     }
     
 }
