@@ -1,8 +1,7 @@
 package com.mycompany.student_registration_system;
 
 import java.util.ArrayList;
-import org.joda.time.LocalDate;
-import org.joda.time.Years;
+import org.joda.time.DateTime;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,15 +18,14 @@ public class Student {
     private String name;
     private ArrayList<Module> modules;
     private Course course;
-    //private String nextStudentId = null;
     private String studentId;
     private int age;
-    private LocalDate DOB;
+    private DateTime DOB;
 
     public Student(String name, String studentId){
         this.name = name;
         this.studentId = studentId;
-        LocalDate now = LocalDate.now();
+        DateTime now = DateTime.now();
        // age = Years.yearsBetween(DOB, now).getYears();
 
         modules = new ArrayList<Module>();
@@ -65,11 +63,11 @@ public class Student {
         this.course = course;
     }
 
-    public LocalDate getDOB() {
+    public DateTime getDOB() {
         return DOB;
     }
 
-    public void setDOB(LocalDate DOB) {
+    public void setDOB(DateTime DOB) {
         this.DOB = DOB;
     }
     

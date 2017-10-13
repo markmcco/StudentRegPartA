@@ -1,7 +1,9 @@
 package com.mycompany.student_registration_system;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
+import org.joda.time.DateTime;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,10 +19,10 @@ public class Course {
     
     private ArrayList modules;
     private String title, courseCode;
-    private LocalDate startDate, endDate;
+    private DateTime startDate, endDate;
     private ArrayList<Student> students;
 
-    public Course(String title, String courseCode, LocalDate start, LocalDate end) {
+    public Course(String title, String courseCode, DateTime start, DateTime end) {
         this.title = title;
         this.startDate = start;
         this.endDate = end;
@@ -71,19 +73,19 @@ public class Course {
         this.title = title;
     }
 
-    public LocalDate getStartDate() {
+    public DateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(DateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public DateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(DateTime endDate) {
         this.endDate = endDate;
     }
 
